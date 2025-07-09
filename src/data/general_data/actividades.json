@@ -1,0 +1,186 @@
+[
+  {
+    "key": "MR100",
+    "value": {
+      "label": "Conservación de calzada",
+      "value": [
+        {
+          "key": "MR101",
+          "value": {
+            "label": "Limpieza de calzada",
+            "carga_trabajo": 0,
+            "unidad": "Km"
+          }
+        },
+        {
+          "key": "MR102",
+          "value": {
+            "label": "Bacheo",
+            "carga_trabajo": 0,
+            "unidad": "m2"
+          }
+        },
+        {
+          "key": "MR103",
+          "value": {
+            "label": "Desquinche",
+            "carga_trabajo": 0,
+            "unidad": "m3"
+          }
+        },
+        {
+          "key": "MR104",
+          "value": {
+            "label": "Remoción de derrumbes",
+            "carga_trabajo": 0,
+            "unidad": "m3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR200",
+    "value": {
+      "label": "Limpieza de obras de arte",
+      "value": [
+        {
+          "key": "MR201",
+          "value": {
+            "label": "Limpieza de cunetas",
+            "carga_trabajo": 1440,
+            "unidad": "m"
+          }
+        },
+        {
+          "key": "MR202",
+          "value": {
+            "label": "Limpieza de alcantarillas",
+            "carga_trabajo": 0,
+            "unidad": "unidad"
+          }
+        },
+        {
+          "key": "MR203",
+          "value": {
+            "label": "Limpieza de badén",
+            "carga_trabajo": 0,
+            "unidad": "m2"
+          }
+        },
+        {
+          "key": "MR204",
+          "value": {
+            "label": "Limpieza de zanjas de coronación",
+            "carga_trabajo": 0,
+            "unidad": "m"
+          }
+        },
+        {
+          "key": "MR205",
+          "value": {
+            "label": "Limpieza de pontones",
+            "carga_trabajo": 0,
+            "unidad": "unidad"
+          }
+        },
+        {
+          "key": "MR206",
+          "value": {
+            "label": "Encausamiento de pequeños cursos de agua",
+            "carga_trabajo": 0,
+            "unidad": "m"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR300",
+    "value": {
+      "label": "Control de vegetación",
+      "value": [
+        {
+          "key": "MR301",
+          "value": {
+            "label": "Roce y limpieza",
+            "carga_trabajo": 0,
+            "unidad": "m2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR400",
+    "value": {
+      "label": "Seguridad vial",
+      "value": [
+        {
+          "key": "MR401",
+          "value": {
+            "label": "Conservación de señales",
+            "carga_trabajo": 10,
+            "unidad": "unidad"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR500",
+    "value": {
+      "label": "Medio ambiente",
+      "value": [
+        {
+          "key": "MR501",
+          "value": {
+            "label": "Reforestación",
+            "carga_trabajo": 0,
+            "unidad": "unidad"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR600",
+    "value": {
+      "label": "Vigilancia y control vial",
+      "value": [
+        {
+          "key": "MR601",
+          "value": {
+            "label": "Vigilancia y control",
+            "carga_trabajo": 0,
+            "unidad": "Km"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "MR700",
+    "value": {
+      "label": "Actividades complementarias",
+      "value": [
+        {
+          "key": "MR701",
+          "value": {
+            "label": "Reparación de muros secos",
+            "carga_trabajo": 0,
+            "unidad": "m3"
+          }
+        },
+        {
+          "key": "MR702",
+          "value": {
+            "label": "Reparación de pontones",
+            "carga_trabajo": 0,
+            "unidad": "unidad"
+          }
+        }
+      ]
+    }
+  }
+]
