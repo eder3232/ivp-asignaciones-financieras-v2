@@ -182,5 +182,29 @@
         }
       ]
     }
+  },
+  {
+    "key": "VP100",
+    "value": {
+      "label": "Vias pavimentadas",
+      "value": [
+        {
+          "key": "VP101",
+          "value": {
+            "label": "Parchado superficial",
+            "carga_trabajo": 0,
+            "unidad": "m2"
+          }
+        },
+        {
+          "key": "VP102",
+          "value": {
+            "label": "Parchado profundo",
+            "carga_trabajo": 0,
+            "unidad": "m2"
+          }
+        }
+      ]
+    }
   }
 ]
