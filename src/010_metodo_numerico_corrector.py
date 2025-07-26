@@ -1,4 +1,4 @@
-proyecto = "cabanaconde"
+proyecto = "sibayo"
 mes = 5
 anio = 2025
 
@@ -45,7 +45,9 @@ class CostoIngenieriaResult(TypedDict):
     total: float
 
 
-def calculadora_costo_total(costo_directo: float) -> CostoIngenieriaResult:
+def calculadora_costo_total(
+    costo_directo: float, gastos_generales: float
+) -> CostoIngenieriaResult:
     """
     Calcula el costo total de un proyecto de ingeniería civil en soles peruanos.
 
@@ -56,7 +58,7 @@ def calculadora_costo_total(costo_directo: float) -> CostoIngenieriaResult:
         CostoIngenieriaResult: Diccionario con todos los valores calculados
     """
     # Calcular gastos generales (10% del costo directo)
-    gastos_generales = round(costo_directo * 0.10, 2)
+    gastos_generales = round(costo_directo * gastos_generales, 2)
 
     # Calcular utilidad (5% del costo directo)
     utilidad = round(costo_directo * 0.05, 2)
@@ -343,6 +345,9 @@ expediente_tecnico_firebase = doc_proyecto_firebase["expediente"]
 
 pprint.pprint(expediente_tecnico_firebase)
 
+gastos_generales_expediente = expediente_tecnico_firebase["gastos_generales"]
+print(gastos_generales_expediente)
+
 # %% [markdown]
 # #### Progresiva de inicio y fin del expediente
 
@@ -475,16 +480,14 @@ print(actividades)
 # %%
 def funcion_input(x):
     cargas_trabajo_contratista = {
-        "MR301": 5409.77,
-        "MR203": 42.42,
-        "MR201": 2272.73,
-        "MR101": 2.31,
-        "MR104": 17.01,
-        "MR102": x,
-        "MR701": 3.87,
-        "MR401": 5.87,
+        "PP": 112,
+        "PS": x,
+        "MR201": 5146.67,
+        "MR202": 5.1,
+        "MR103": 13.33,
+        "MR101": 0.86,
+        "MR301": 1999.88,
     }
-
     datos_cargas_trabajo_expediente_tecnico = fusionar_diccionarios(
         {
             "precio_unitario": precios_unitarios_expediente_tecnico,
@@ -521,7 +524,9 @@ def funcion_input(x):
     print("costo_directo", costo_directo)
 
     # %%
-    costo_total_expediente = calculadora_costo_total(costo_directo)
+    costo_total_expediente = calculadora_costo_total(
+        costo_directo, gastos_generales_expediente
+    )
     print(costo_total_expediente["total"])
 
     # %%
@@ -547,7 +552,9 @@ def funcion_input(x):
     df_cargas_trabajo_expediente.head(10)
 
     # %%
-    pago_costo_total_contratista = calculadora_costo_total(costo_directo_actualizado)
+    pago_costo_total_contratista = calculadora_costo_total(
+        costo_directo_actualizado, gastos_generales_expediente
+    )
     print(pago_costo_total_contratista["total"])
 
     # %%
@@ -613,17 +620,17 @@ def funcion_input(x):
 
     # %%
     pago_costo_total_contratista = calculadora_costo_total(
-        pago_costo_directo_contratista
+        pago_costo_directo_contratista, gastos_generales_expediente
     )
     return pago_costo_total_contratista["total"]
 
 
-target_output = 8382.4
+target_output = desembolso_current_month["mantenimiento_con_igv"]
 
 # Necesitas una estimación inicial (guess) para el método de Newton-Raphson.
 # Una buena estimación inicial puede ayudar a la convergencia y a encontrar la raíz correcta
 # si hay múltiples raíces.
-initial_guess = 245
+initial_guess = 300
 
 
 def function_to_find_root(x, target_output_val):
@@ -638,3 +645,10 @@ result = opt.newton(function_to_find_root, initial_guess, args=(target_output,))
 
 print("resultado final")
 print(result)
+
+
+def filtrar_claves_no_cero(diccionario):
+    """
+    Recibe un diccionario y retorna una lista de las claves cuyo valor es distinto de cero.
+    """
+    return [clave for clave, valor in diccionario.items() if valor != 0]
