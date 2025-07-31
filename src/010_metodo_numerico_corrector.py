@@ -1,4 +1,4 @@
-proyecto = "sibayo"
+proyecto = "misanayoc"
 mes = 5
 anio = 2025
 
@@ -480,14 +480,16 @@ print(actividades)
 # %%
 def funcion_input(x):
     cargas_trabajo_contratista = {
-        "PP": 112,
-        "PS": x,
-        "MR201": 5146.67,
-        "MR202": 5.1,
-        "MR103": 13.33,
-        "MR101": 0.86,
-        "MR301": 1999.88,
+        "MR301": 385.19,
+        "MR203": 63.64,
+        "MR201": x,
+        "MR101": 0.57,
+        "MR102": 180.46,
+        "MR104": 3.33,
+        "MR701": 2,
+        "MR601": 4.15,
     }
+
     datos_cargas_trabajo_expediente_tecnico = fusionar_diccionarios(
         {
             "precio_unitario": precios_unitarios_expediente_tecnico,
@@ -616,7 +618,7 @@ def funcion_input(x):
     pago_costo_directo_contratista = sumar_valores(
         pago_costo_directo_parciales_contratista
     )
-    print(pago_costo_directo_contratista)
+    # print(pago_costo_directo_contratista)
 
     # %%
     pago_costo_total_contratista = calculadora_costo_total(
